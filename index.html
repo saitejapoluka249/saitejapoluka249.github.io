@@ -10,30 +10,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
     <script src="https://kit.fontawesome.com/9fa51d37bd.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <nav class="header" id="navbar">
       <div class="logo">Saiteja Poluka</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#project">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div style="display: flex; align-items: center;">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+      </div>
     </nav>
     <section id="home" class="hero">
       <div class="hero-content">
         <h1>Hi, I'm <span class="accent">Saiteja</span></h1>
         <h2 id="element" class="typed-text"></h2>
         <p>
-          I am a Full Stack Software Engineer with 3+ years of experience building scalable systems, currently pursuing a Master's in Computer Science at the <strong>University of Colorado Boulder</strong> (GPA: 3.95/4.0).
+          I am a Full Stack Software Engineer with 3+ years of experience building scalable <strong>distributed systems</strong> and integrating <strong>Generative AI</strong>, currently pursuing a Master's in Computer Science at the <strong>University of Colorado Boulder</strong> (GPA: 3.95/4.0).
         </p>
         <p>
-          Previously at Darwinbox, I specialized in designing high-traffic APIs and improving system performance. My technical stack includes React.js, Node.js, Python, MySQL, and Google Cloud. I'm passionate about solving complex technical challenges and eager to drive innovation in my next role.
+          Previously at PayPal and Darwinbox, I specialized in designing high-traffic APIs, securing middleware, and improving system performance. My technical stack includes React.js, Node.js, Python, gRPC, and Google Cloud. I'm passionate about architecting Agentic AI workflows and solving complex backend challenges.
         </p>
         
         <div class="email-box" style="margin-bottom: 25px;">
@@ -56,50 +62,195 @@
       </div>
     </section>
 
-    <section id="experience" class="container reveal bg-alt">
-      <div class="section-heading">
-        <h2>Experience</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">Nov 2024 – Present</div>
-          <div class="timeline-content">
-            <h3>Full Stack Developer</h3>
-            <h4>University of Colorado Boulder</h4>
-            <ul>
-              <li>Enhanced the functionality of the VerbNet project website, optimizing performance and resolving critical bugs.</li>
-              <li>Integrated HTML/CSS, Python, Flask, JavaScript, and MongoDB, reducing loading times.</li>
-              <li>Worked with Django, React, HTML, CSS, and JavaScript to design and develop dynamic and interactive web applications for UMR.</li>
-            </ul>
-          </div>
-        </div>
+    <section class="section" id="experience" aria-label="Experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+            </div>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-tabs">
+                    <button class="timeline-tab active" data-tab="experience">
+                        <span class="material-symbols-outlined">work</span>
+                        Experience
+                    </button>
+                    <button class="timeline-tab" data-tab="education">
+                        <span class="material-symbols-outlined">school</span>
+                        Education
+                    </button>
+                </div>
+                
+                <div class="timeline-content">
+                    
+                    <div class="timeline-panel active" id="experience-panel">
+                        <div class="timeline">
+                            
+                            <div class="timeline-item reveal-up">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-card">
+                                    <div class="timeline-header" onclick="toggleTimeline(this)">
+                                        <div class="timeline-header-left">
+                                            <h3>Software Engineer Intern</h3>
+                                            <p class="timeline-company">PayPal | Austin, USA</p>
+                                        </div>
+                                        <div class="timeline-header-right">
+                                            <span class="timeline-date">May 2025 - Aug 2025</span>
+                                            <span class="material-symbols-outlined timeline-expand-icon">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <div class="timeline-details-inner">
+                                            <ul class="timeline-description">
+                                                <li>Migrated core PayPal middleware modules into a Fastify-based application, achieving 100% compatibility.</li>
+                                                <li>Engineered custom authentication using JWT cookies with role-based access control and CSRF protection, reducing security risks by ~90%.</li>
+                                                <li>Implemented comprehensive testing strategy with Jest (100% unit test coverage) and Cypress, deployed via Harness CI/CD pipelines.</li>
+                                            </ul>
+                                            <div class="timeline-tags">
+                                                <span>Fastify</span>
+                                                <span>Node.js</span>
+                                                <span>JWT / CSRF</span>
+                                                <span>Jest & Cypress</span>
+                                                <span>CI/CD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item reveal-up">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-card">
+                                    <div class="timeline-header" onclick="toggleTimeline(this)">
+                                        <div class="timeline-header-left">
+                                            <h3>Full Stack Developer</h3>
+                                            <p class="timeline-company">Institute of Cognitive Science, CU Boulder</p>
+                                        </div>
+                                        <div class="timeline-header-right">
+                                            <span class="timeline-date">Nov 2024 - Present</span>
+                                            <span class="material-symbols-outlined timeline-expand-icon">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <div class="timeline-details-inner">
+                                            <ul class="timeline-description">
+                                                <li>Enhanced and optimized the VerbNet project website, resolving critical bugs and improving user engagement.</li>
+                                                <li>Integrated HTML/CSS, Python, Flask, JavaScript, and MongoDB to optimize website performance and backend efficiency.</li>
+                                                <li>Collaborated with cross-functional teams to implement new features for both VerbNet and UMR websites based on user feedback.</li>
+                                            </ul>
+                                            <div class="timeline-tags">
+                                                <span>Python / Flask</span>
+                                                <span>MongoDB</span>
+                                                <span>JavaScript</span>
+                                                <span>HTML/CSS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item reveal-up">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-card">
+                                    <div class="timeline-header" onclick="toggleTimeline(this)">
+                                        <div class="timeline-header-left">
+                                            <h3>Full Stack Software Engineer I</h3>
+                                            <p class="timeline-company">Darwinbox | Hyderabad, India</p>
+                                        </div>
+                                        <div class="timeline-header-right">
+                                            <span class="timeline-date">Mar 2022 - Jul 2024</span>
+                                            <span class="material-symbols-outlined timeline-expand-icon">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <div class="timeline-details-inner">
+                                            <ul class="timeline-description">
+                                                <li>Designed scalable REST APIs with Yii 1.1 and Node.js, improving response time by 40% and minimizing server load by 30%.</li>
+                                                <li>Integrated Veryfi OCR and Oanda APIs via REST to streamline data extraction, achieving 98% accuracy.</li>
+                                                <li>Developed backend microservices for report generation, reducing processing time by 25%.</li>
+                                                <li>Reviewed and optimized 500+ LOC weekly through GitHub PRs, improving overall code quality by 15%.</li>
+                                            </ul>
+                                            <div class="timeline-tags">
+                                                <span>Node.js</span>
+                                                <span>PHP / Yii 1.1</span>
+                                                <span>REST APIs</span>
+                                                <span>Microservices</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">May 2025 – Aug 2025</div>
-          <div class="timeline-content">
-            <h3>Software Engineer Intern</h3>
-            <h4>PayPal, Austin, USA</h4>
-            <ul>
-              <li>Migrated core PayPal middleware modules into a Fastify-based application, achieving 100% compatibility.</li>
-              <li>Engineered custom authentication using JWT cookies with role-based access control and secured all POST routes.</li>
-              <li>Implemented a comprehensive testing strategy with Jest (100% unit test coverage) and Cypress.</li>
-            </ul>
-          </div>
-        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-panel" id="education-panel">
+                        <div class="timeline">
+                            
+                            <div class="timeline-item reveal-up">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-card">
+                                    <div class="timeline-header" onclick="toggleTimeline(this)">
+                                        <div class="timeline-header-left">
+                                            <h3>Master of Science in Computer Science</h3>
+                                            <p class="timeline-company">University of Colorado Boulder</p>
+                                        </div>
+                                        <div class="timeline-header-right">
+                                            <span class="timeline-date">Aug 2024 - May 2026</span>
+                                            <span class="material-symbols-outlined timeline-expand-icon">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <div class="timeline-details-inner">
+                                            <ul class="timeline-description">
+                                                <li><strong>GPA:</strong> 3.92 / 4.00</li>
+                                                <li>Focused coursework in Distributed Systems, Generative AI, Cloud Computing, and Datacenter Scale Computing.</li>
+                                            </ul>
+                                            <div class="timeline-tags">
+                                                <span>Distributed Systems</span>
+                                                <span>Generative AI</span>
+                                                <span>Cloud Computing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item reveal-up">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-card">
+                                    <div class="timeline-header" onclick="toggleTimeline(this)">
+                                        <div class="timeline-header-left">
+                                            <h3>Bachelor of Technology in CS & Engineering</h3>
+                                            <p class="timeline-company">Vasavi College of Engineering | Hyderabad, India</p>
+                                        </div>
+                                        <div class="timeline-header-right">
+                                            <span class="timeline-date">Aug 2018 - Jun 2022</span>
+                                            <span class="material-symbols-outlined timeline-expand-icon">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <div class="timeline-details-inner">
+                                            <ul class="timeline-description">
+                                                <li><strong>GPA:</strong> 3.90 / 4.00</li>
+                                                <li>Core coursework in Databases, Algorithms, Computer Networks, Machine Learning, and Operating Systems.</li>
+                                            </ul>
+                                            <div class="timeline-tags">
+                                                <span>Machine Learning</span>
+                                                <span>Data Structures</span>
+                                                <span>Software Engineering</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">July 2022 – July 2024</div>
-          <div class="timeline-content">
-            <h3>Full Stack Software Engineer</h3>
-            <h4>Darwinbox, Hyderabad, India</h4>
-            <ul>
-              <li>Designed and developed scalable APIs to handle high traffic efficiently.</li>
-              <li>Enhanced API and MongoDB pipeline efficiency, minimizing server response times by 30%.</li>
-              <li>Integrated multiple APIs (Veryfi OCR, Oanda, Fixer) to streamline data extraction.</li>
-            </ul>
-          </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section id="project" class="container reveal">
@@ -107,17 +258,41 @@
         <h2>Featured Projects</h2>
       </div>
       <div class="project-grid">
+        
         <div class="project-card">
           <div class="project-img">
-            <img src="public/artgalleryproject.jpg" alt="Art Gallery" />
+            <img src="public/ai_distributed_marketplace_project_pic.png" alt="AI Distributed Marketplace" />
           </div>
           <div class="project-info">
-            <h3>Online Art Gallery</h3>
-            <p>Connects art lovers with budding artists, allowing users to browse and purchase paintings, sculptures, and photographs with an easy-to-use interface.</p>
+            <h3>AI-Powered Distributed Marketplace</h3>
+            <p>An enterprise-grade e-commerce platform featuring an Agentic AI Chatbot with RAG, Semantic "Vibe" Search, and interactive map routing. Architected with high-performance Python gRPC microservices, a legacy SOAP financial gateway, and a React frontend.</p>
             <div class="project-tech">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
+              <span>React</span>
+              <span>Python / Flask</span>
+              <span>gRPC Microservices</span>
+              <span>Agentic AI</span>
+              <span>RAG</span>
+              <span>Prompt Engineering</span>
             </div>
-            <a href="https://github.com/saitejapoluka249/project/tree/main/artgalleryproject" target="_blank" class="btn btn-outline">View Code <i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/saitejapoluka249/ai-distributed-marketplace" target="_blank" class="btn btn-outline">View Code <i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="public/nutrition_helper_project_pic.png" alt="Nutrition Helper Capstone" />
+          </div>
+          <div class="project-info">
+            <h3>Nutrition Helper & Analytics Engine</h3>
+            <p>A distributed data-processing application utilizing a Go (Golang) backend and React frontend. Engineered with separate collector and analyzer background services communicating via Google Pub/Sub. Fully containerized and deployed on Google Cloud Run with automated CI/CD pipelines and Prometheus observability.</p>
+            <div class="project-tech">
+              <span>Go (Golang)</span>
+              <span>React</span>
+              <span>PostgreSQL</span>
+              <span>Google Cloud (GCP)</span>
+              <span>CI/CD</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1gQB7o1rmXu9C5WKvPWd2KbT43f4SJg3H/view?usp=sharing" target="_blank" class="btn btn-outline">Watch Demo <i class="fa-solid fa-play"></i></a>
           </div>
         </div>
 
@@ -126,26 +301,16 @@
             <img src="public/project2_1.png" alt="Budget Planner" />
           </div>
           <div class="project-info">
-            <h3>Monthly Budget Planner</h3>
-            <p>A full-stack web application built using Node.js, Express, MongoDB, and AWS to help users track monthly income, expenses, and savings via visual charts.</p>
+            <h3>AWS Cloud Budget Planner</h3>
+            <p>A secure, full-stack financial tracking dashboard. Built on a Node.js/Express backend with MongoDB, featuring JWT authentication and bcrypt password hashing. Integrates Chart.js for real-time financial data visualization and AWS Simple Email Service (SES) for automated budget alert notifications.</p>
             <div class="project-tech">
-              <span>NodeJS</span><span>Express</span><span>MongoDB</span><span>AWS</span>
+              <span>Node.js / Express</span>
+              <span>MongoDB</span>
+              <span>AWS (SES)</span>
+              <span>REST APIs</span>
+              <span>Chart.js</span>
             </div>
             <a href="https://github.com/saitejapoluka249/monthly_budget_planner" target="_blank" class="btn btn-outline">View Code <i class="fa-brands fa-github"></i></a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <img src="public/project3_1.png" alt="Community Event Organizer" />
-          </div>
-          <div class="project-info">
-            <h3>Community Event Organizer</h3>
-            <p>A web application that allows users to create, manage, and explore community events leveraging Google Cloud services for scalability.</p>
-            <div class="project-tech">
-              <span>Flask</span><span>Cloud SQL</span><span>Pub/Sub</span><span>GCS</span>
-            </div>
-            <a href="https://github.com/saitejapoluka249/dcsc_project" target="_blank" class="btn btn-outline">View Code <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -162,9 +327,10 @@
         <div class="skill-item"><img src="./public/python.png" alt="Python"><span>Python</span></div>
         <div class="skill-item"><img src="./public/java.png" alt="Java"><span>Java</span></div>
         <div class="skill-item"><img src="./public/javascript.png" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="skill-item"><img src="./public/c-.png" alt="C++"><span>C++</span></div>
-        <div class="skill-item"><img src="./public/html.png" alt="HTML"><span>HTML5</span></div>
-        <div class="skill-item"><img src="./public/css-3.png" alt="CSS"><span>CSS3</span></div>
+        
+        <div class="skill-item"><img src="public/gen_ai_icon.jpg" alt="OpenAI" onerror="this.style.display='none'"><span>Gen AI / LLMs</span></div>
+        <div class="skill-item"><img src="public/grpc_icon.png" alt="gRPC" onerror="this.style.display='none'"><span>gRPC</span></div>
+        
         <div class="skill-item"><img src="./public/physics.png" alt="ReactJS"><span>React JS</span></div>
         <div class="skill-item"><img src="./public/nodejs.png" alt="NodeJS"><span>Node.js</span></div>
         <div class="skill-item"><img src="./public/expressjs.png" alt="ExpressJS"><span>Express JS</span></div>
@@ -210,7 +376,7 @@
     <script>
       // Initialize Typed.js
       var typed = new Typed("#element", {
-        strings: ["Full Stack Software Engineer", "Problem Solver", "Tech Enthusiast"],
+        strings: ["Full Stack Software Engineer", "Distributed Systems Engineer", "Generative AI Enthusiast"],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 2000,
