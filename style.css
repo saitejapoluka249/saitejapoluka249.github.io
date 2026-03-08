@@ -608,7 +608,6 @@ footer {
     padding: 4rem 5%;
   }
 }
-
 /* ====== Tabbed Timeline Section ====== */
 .section-subtitle {
   display: block;
@@ -683,32 +682,33 @@ footer {
 /* Timeline Line & Cards */
 .timeline {
   position: relative;
-  border-left: 2px solid var(--border-color);
-  margin-left: 20px;
-  padding-left: 30px;
+  border-left: none; /* Removed the vertical line */
+  margin-left: 0;    /* Reset margin */
+  padding-left: 0;   /* Reset padding */
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 25px;
+  /* Resetting styles from the earlier Experience Section to remove double border */
+  background: none; 
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .timeline-marker {
-  position: absolute;
-  left: -41px;
-  top: 25px;
-  width: 20px;
-  height: 20px;
-  background: var(--bg-color);
-  border: 4px solid var(--accent-color);
-  border-radius: 50%;
-  z-index: 2;
-  transition: var(--transition);
+  display: none; /* Removed the dot marker */
 }
 
 .timeline-card {
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color); /* Keeping only this single border */
   border-radius: 12px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -717,11 +717,6 @@ footer {
 
 .timeline-card:hover {
   border-color: var(--accent-color);
-}
-
-.timeline-card:hover .timeline-marker {
-  background: var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* Header (Clickable) */
@@ -765,6 +760,7 @@ footer {
   padding: 4px 12px;
   border-radius: 20px;
   border: 1px solid var(--border-color);
+  margin-bottom: 0; /* Override earlier margin */
 }
 
 .timeline-expand-icon {
@@ -794,11 +790,25 @@ footer {
 .timeline-description {
   padding-left: 20px;
   margin-bottom: 20px;
+  list-style-type: none;
 }
 
 .timeline-description li {
+  position: relative;
+  padding-left: 1.5rem;
   margin-bottom: 8px;
   font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.timeline-description li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  top: -2px;
 }
 
 .timeline-tags {
