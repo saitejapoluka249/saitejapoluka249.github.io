@@ -51,11 +51,12 @@ $(document).ready(function () {
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// 1. Check if the user already chose Dark Mode in a previous visit
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeIcon.classList.replace('fa-moon', 'fa-sun'); // Switch to Sun icon
+// 1. Check if the user specifically chose Light Mode in a previous visit
+// Since HTML now defaults to dark-mode, we only need to remove it if "light" is saved.
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.classList.remove('dark-mode');
+    themeIcon.classList.replace('fa-sun', 'fa-moon'); // Show moon for light mode
 }
 
 // 2. Listen for clicks on the toggle button
@@ -63,13 +64,13 @@ themeToggle.addEventListener('click', () => {
     // Toggle the dark-mode class on the body
     document.body.classList.toggle('dark-mode');
     
-    // Check if dark mode is now active
+    // Check state after toggle and update icon/storage
     if (document.body.classList.contains('dark-mode')) {
-        themeIcon.classList.replace('fa-moon', 'fa-sun'); // Show Sun
-        localStorage.setItem('theme', 'dark'); // Save preference
+        themeIcon.classList.replace('fa-moon', 'fa-sun'); // Show Sun icon when dark
+        localStorage.setItem('theme', 'dark');
     } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon'); // Show Moon
-        localStorage.setItem('theme', 'light'); // Save preference (Default)
+        themeIcon.classList.replace('fa-sun', 'fa-moon'); // Show Moon icon when light
+        localStorage.setItem('theme', 'light');
     }
 });
 
